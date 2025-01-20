@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TempTabs - Firefox Extension</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.js"></script>
+    <style>
+        :root {
+            --primary: #8b5cf6;
+            --primary-hover: #7c3aed;
+            --bg-dark: #111827;
+            --bg-card: #1f2937;
+            --text-primary: #f3f4f6;
+            --text-secondary: #9ca3af;
+        }
+
+        body {
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+.card {
+    background: var(--bg-card);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 
+                0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    transition: transform 0.2s ease-in-out;
+    margin: 0 auto;
+    width: clamp(280px, 90%, 900px);
+    padding: clamp(1rem, 4vw, 2rem);
+}
+
+
+        .shortcut-container {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 1rem;
+            padding: 2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .shortcut-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 0.75rem;
+            margin-bottom: 1rem;
+            transition: all 0.2s ease;
+        }
+
+        kbd {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 2px 0 rgba(0, 0, 0, 0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            font-family: monospace;
+            font-size: 0.9rem;
+            min-width: 100px;
+            text-align: center;
+            color: var(--primary);
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 0 auto;
+        }
+
+        .feature-item {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .feature-item:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateY(-2px);
+        }
+
+        main {
+            flex: 1;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            box-sizing: border-box;
+        }
+
+        footer {
+            width: clamp(280px, 100%, 900px);
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        @media (max-width: 640px) {
+            .card {
+                width: 95%;
+                padding: 1rem;
+            }
+            
+            .shortcut-item {
+                flex-direction: column;
+                text-align: center;
+                padding: 0.75rem;
+            }
+
+            kbd {
+                min-width: 80px;
+                padding: 0.25rem 0.5rem;
+            }
+
+            main {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="card rounded-xl mb-12">
+            <h1 class="text-5xl font-bold mb-4 gradient-text text-center">TempTabs</h1>
+            <p class="text-xl text-gray-400 mb-8 text-center">
+                Keep your browser tidy with smart, self-closing temporary tabs
+            </p>
+
+            <div class="space-y-8">
+                <section>
+                    <h2 class="text-2xl font-semibold mb-6 gradient-text text-center">Download</h2>
+                    <div class="feature-grid">
+                        <a href="TempTabs-1.0.xpi" style="text-decoration:none;">
+                            <div class="feature-item">
+                                <h3 class="text-2xl font-semibold mb-2" style="color: #b78aff;">TempTabs - Version 1.0</h3>
+                            </div>
+                        </a>
+                    </div>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-semibold mb-6 gradient-text text-center">Keyboard Shortcuts</h2>
+                        <div class="shortcut-item">
+                            <kbd>Alt + X</kbd>
+                            <span class="text-gray-300">Open new temporary tab</span>
+                        </div>
+                        <div class="shortcut-item">
+                            <kbd>Alt + Shift + X</kbd>
+                            <span class="text-gray-300">Make current tab temporary</span>
+                        </div>
+                        <div class="shortcut-item">
+                            <kbd>Alt + C</kbd>
+                            <span class="text-gray-300">Make current tab permanent</span>
+                        </div>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-semibold mb-6 gradient-text text-center">About</h2>
+                    <p class="text-gray-400 leading-relaxed text-center">
+                        TempTabs allows you to open a tab, do a quick google search, and have it close automatically when you switch to another tab. 
+                    </p>
+                </section>
+            </div>
+        </div>
+
+        <footer class="text-center text-gray-500">
+            <p>Created with ♥ (and Claude) by Skylar Abruzese</p>
+        </footer>
+
+    </main>
+</body>
+</html>
