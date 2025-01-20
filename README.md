@@ -1,3 +1,6 @@
+# Website + Download
+https://labruzese.github.io/TempTabs/
+
 # TempTabs
 Adds the ability to create temporary tabs that automatically close when switching away from them. Useful if you want to google something and don't want to have to remember to close the tab.
 
