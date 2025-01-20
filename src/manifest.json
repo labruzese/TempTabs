@@ -1,0 +1,35 @@
+{
+  "manifest_version": 2,
+  "name": "Temporary Tabs",
+  "version": "1.0.1",
+  "description": "Creates temporary tabs that close when switching away from them",
+  "permissions": [
+    "tabs",
+    "contextMenus",
+    "<all_urls>",
+    "activeTab"
+  ],
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "commands": {
+    "new-temp-tab": {
+      "suggested_key": {
+        "default": "Alt+X"
+      },
+      "description": "Open new temporary tab"
+    },
+    "make-temp-tab": {
+      "suggested_key": {
+        "default": "Alt+Shift+X"
+      },
+      "description": "Make current tab temporary"
+    },
+    "release-temp-tab": {
+      "suggested_key": {
+        "default": "Alt+C"
+      },
+      "description": "Make temporary tab permanent"
+    }
+  }
+}
