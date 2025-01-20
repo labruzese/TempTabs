@@ -42,12 +42,11 @@ async function updateTabTitle(tabId, isTemp) {
 // Create a temporary tab
 async function createTemporaryTab(url = "about:blank") {
   const newTab = await browser.tabs.create({
-    url: url,
     active: true
   });
   temporaryTabs.add(newTab.id);
   // Wait a bit for the page to load before updating the title
-  setTimeout(() => updateTabTitle(newTab.id, true), 500);
+  setTimeout(() => updateTabTitle(newTab.id, true), 400);
 }
 
 // Make current tab temporary
