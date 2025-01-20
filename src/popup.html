@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Temporary Tabs Settings</title>
+  <style>
+    body {
+      width: 300px;
+      padding: 15px;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .keybind-row {
+      margin: 8px 0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    input {
+      padding: 4px 8px;
+      font-size: 13px;
+      width: 100px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+    input:focus {
+      outline: 2px solid #0060df;
+      border-color: #0060df;
+    }
+    label {
+      font-size: 13px;
+      min-width: 120px;
+    }
+    #status {
+      color: green;
+      margin-top: 12px;
+      font-size: 12px;
+    }
+    h2 {
+      font-size: 16px;
+      margin-top: 0;
+      margin-bottom: 12px;
+    }
+    .hint {
+      font-size: 11px;
+      color: #666;
+      margin-top: 8px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Keyboard Shortcuts</h2>
+  <div id="keybindings"></div>
+  <div id="status"></div>
+  <div class="hint">Press desired key combination (e.g., Alt+X)</div>
+  <script src="popup.js"></script>
+</body>
+</html>
