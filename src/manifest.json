@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "applications": {
     "gecko": {
-      "id": "skylar@abruzese.com",
+      "id": "{5229cc44-5407-439f-8b01-51ff0cdbae51}",
       "update_url": "https://raw.githubusercontent.com/labruzese/TempTabs/main/updates.json",
       "strict_min_version": "58.0"
     }
